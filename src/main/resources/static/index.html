@@ -1,10 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kino</title>
+    <style>
+        label {
+            display: inline-block;
+            width: 70px;
+            text-align: right;
+            margin-right: 10px;
+        }
+        input {
+            display: inline-block;
+            width: 150px;
+            vertical-align: top;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script src="script.js"></script>
 </head>
 <body>
-$END$
+<h1>Bestilling av kinobilletter</h1>
+<p>Velg film: <select id="film" onchange="validerFilm()">
+    <option value="" selected>Velg film her</option>
+    <option value="Never say never">Never say never</option>
+    <option value="My World">My World</option>
+    <option value="Our World">Our World</option>
+</select></p>
+
+
+<p>Antall <input
+        type="text"
+        id="antall"
+        min="1"
+        style="width: 30px"
+        onchange="validerAntall()">
+    <span id="antallError" class="error"></span>
+</p>
+
+<label for="fornavn">Fornavn</label>
+<input type="text" id="fornavn" onchange="validerFornavn()">
+<span id="fornavnError" class="error"></span>
+<br>
+
+<label for="etternavn">Etternavn</label>
+<input type="text" id="etternavn" onchange="validerEtternavn()">
+<span id="etternavnError" class="error"></span>
+<br>
+
+<label for="telefonnr">Telefonnr</label>
+<input type="tel" id="telefonnr" onchange="validerTelefonnr()">
+<span id="telefonnrError" class="error"></span>
+<br>
+
+<label for="epost">Epost</label>
+<input type="email" id="epost" onchange="validerEpost()">
+<span id="epostError" class="error"></span>
+<br>
+
+<button onclick="registrer()">Kjøp billett</button>
+
+<h2>Alle billetter</h2>
+
+<table id="register"></table>
+<br>
+<button onclick="slettBilletterKnapp()">Slett alle billetter</button>
+
 </body>
 </html>
+
