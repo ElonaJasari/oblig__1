@@ -1,0 +1,1 @@
+en nettside som registrerer kinobilletter. Det vil komme feilmeldinger i rød skrift hvis man ikke skriver inn gyldig tekst/tall for hver input-boks. hvis alt er gyldig, skal informasjonen lagres i array.
